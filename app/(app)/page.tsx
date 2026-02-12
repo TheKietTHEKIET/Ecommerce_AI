@@ -1,5 +1,6 @@
 import { CategoryTiles } from "@/components/chat/CategoryTiles";
 import { FeaturedCarousel } from "@/components/chat/FeaturedCarousel";
+import { ProductSection } from "@/components/chat/ProductSection";
 import { sanityFetch } from "@/sanity/lib/live";
 import { ALL_CATEGORIES_QUERY } from "@/sanity/queries/categories";
 import { FEATURED_PRODUCTS_QUERY, FILTER_PRODUCTS_BY_RELEVANCE_QUERY, 
@@ -107,9 +108,12 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
       </div>
 
-      {/* category tiles */}
-
       {/* products section */}
+      <ProductSection
+        categories={categories}
+        products={products}
+        searchQuery={searchQuery}
+      />
     </div>
   );
 }
